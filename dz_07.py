@@ -1,3 +1,9 @@
+
+def string_hash(text):
+    result = 0
+    for ch in text:
+        result += ord(ch)
+    return result
 class HashTable:
     def __init__(self, size=5):
         self.size = size
@@ -54,16 +60,6 @@ class HashTable:
             index = self._index(key)
             self.table[index].append((key, value))
             self.count += 1
-
-        print(f"resize: размер стал {self.size}")
-
-
-def string_hash(text):
-    result = 0
-    for ch in text:
-        result += ord(ch)
-    return result
-
 
 def add_to_dict(table, key):
     table.insert(key, string_hash(key))
